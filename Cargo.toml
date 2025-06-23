@@ -1,0 +1,8 @@
+[package]
+name = "robmon"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+windows = "0.61.3"
+nvml-wrapper = "0.11.0"
