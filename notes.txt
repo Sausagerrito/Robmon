@@ -1,0 +1,18 @@
+use tokio::time::{sleep, Duration};
+
+#[tokio::main]
+async fn main() {
+    // Spawn a background async task
+    tokio::spawn(async {
+        loop {
+            println!("Background task running");
+            sleep(Duration::from_secs(1)).await;
+        }
+    });
+
+    // Main task work
+    loop {
+        println!("Main task running");
+        sleep(Duration::from_secs(2)).await;
+    }
+}
