@@ -1,6 +1,6 @@
 use nvml_wrapper::Nvml;
 
-pub fn print_gpu() -> (String, u32, u32, u64, u32, u32) {
+pub fn fetch_gpu() -> (String, u32, u32, u64, u32, u32) {
     let nvml = Nvml::init().unwrap();
     let device = nvml.device_by_index(0).unwrap();
     let mem_used = device.memory_info().unwrap().used;
